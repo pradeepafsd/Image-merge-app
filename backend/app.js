@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require("cors");
 var connectDB = require("./config");
+var fs = require("fs");
 
 var indexRouter = require('./routes/index');
 var templateRoutes = require("./routes/templateRoutes");
@@ -27,7 +28,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-
+if (!fs.existsSync(uploadsDir)) {
+  fs.mkdirSync(uploadsDir);
+}
 
 app.use('/', indexRouter);
 app.use("/api/templates", templateRoutes);
