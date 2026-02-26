@@ -4,5 +4,8 @@ node_modules/
 # environment variables (secrets)
 .env
 
+# Uploaded files
+uploads/
+
 # logs
 *.log
