@@ -96,7 +96,7 @@ cd backend
 npm install
 ```
 
-2. Create .env file with MONGO_URI and PORT.
+2. Create .env file with MONGO_URI.
 3. Start backend server:
 
 ```bash
@@ -167,6 +167,8 @@ GET /api/users → Get all users
 node_modules/
 
 .env
+
+uploads/
 
 ---
 
